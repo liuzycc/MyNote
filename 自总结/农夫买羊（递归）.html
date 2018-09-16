@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    //农场买了一只羊，第一年是小羊，第二年底生一只，第三年不生，第四年底再生一只，第五年死掉
+    //问：10年后共多少只羊
+
+    //分析:
+    //第一年：1只
+    //第二年底：2只 第一年的羊生了一只
+    //第三年底：2只
+    //第四年底：4只 第二年生的羊生了一只，第一年的羊又生了一只
+    //第五年底：3只 第一年的羊死去
+    //第六年底：6只 第四年生的羊各生一只，第二年的羊生一只
+    //第七年底：5只 第二年生的羊死去
+    //第八年底：10只 第四年生的羊各生一只 第六年生的羊各生一只
+    //第九年底：8只 第四年生的羊死去
+    //第十年底:16只 第八年生的羊各生一只，第六年生的羊各生一只
+    //
+    //奇数年是1 2 3 5 8的斐波那契数列
+    //偶数年是2 4 6 10 16的斐波那契数列
+
+    var bb = a(5);
+    console.log(bb);
+
+    //使用递归
+    function a(year)
+    {
+      var cc = 0;
+      var oushuArr = [];
+      var jishuArr = [];
+      for(var i=1;i<=year;i++)
+      {
+        if(i%2 == 0)
+        {
+          oushuArr.push(i);
+        }
+        else {
+          jishuArr.push(i);
+        }
+      }
+      if(year%2 == 0)
+      {
+        cc += oushu(oushuArr.length);
+      }
+      else {
+        cc += jishu(jishuArr.length);
+      }
+      console.log(jishuArr);
+      console.log(oushuArr);
+      return cc;
+    }
+    // 奇数的时候
+    function jishu(n){
+      if(n == 1)
+      {
+        return n = 1;
+      }
+      if(n == 2)
+      {
+        return n = 2;
+      }
+      return jishu(n-1) + jishu(n-2);
+    }
+    //偶数的时候
+    function oushu(n){
+      if(n == 1)
+      {
+        return n = 2;
+      }
+      if(n == 2)
+      {
+        return n = 4;
+      }
+      return oushu(n-1) + oushu(n-2);
+    }
+  </script>
+</body>
+</html>

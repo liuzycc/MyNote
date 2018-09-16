@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>跨域</title>
+</head>
+<body>
+  <script src='../../jquery-1.12.4.js'></script>
+  <script>
+  
+  $(function(){
+    //jquery提供的跨域  但是需要后台配合返回  echo "$fn(" . json_encode($arr) . ")";
+    // $.ajax({
+    //   url:'http://jsonp.com/jsonp.php',
+      
+    //   dataType:'jsonp',
+    //   success:function(res){
+    //     console.log(res);
+    //   }
+    // });
+
+    //原生跨域实现
+    var create = document.createElement('script');
+    create.src = 'http://jsonp.com/jsonp.php?callback=fnccc';
+    $('body').append($(create));
+    window['fnccc'] = function(data)
+    {
+      console.log(data);
+    }
+  })
+  
+  </script>
+</body>
+</html>

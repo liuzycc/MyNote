@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    //选出缺少的数字返回一个数组
+    function getQS(arr)
+    {
+      var arrQS = [];
+      var ff = new Array;
+      var num = 0;
+      ff.forEach.call(arr,function(v,i){
+        num ++;
+        if(num != v)
+        {
+          var oo = num;
+          arrQS.push(oo);
+          num ++;
+        }
+      })
+      return arrQS;
+    }
+    
+
+    //排序
+    function paixu(arr){
+      for(var i=0;i<arr.length - 1;i++)
+      {
+        for(var j=0;j<arr.length - 1 - i;j++)
+        {
+          if(arr[j] > arr[j+1])
+          {
+            var temp = arr[j];
+            arr[j] = arr[j+1];
+            arr[j+1] = temp;
+          }
+        }
+      }
+      return arr;
+    }
+    //循环遍历100个数字
+    function getFF(one,two){
+      var arr = [];
+      var num = 100000;
+      for(var i=1;i<=num;i++)
+      {
+        if(i != one && i != two)
+        {
+          arr.push(i);
+        }
+      }
+      return arr;
+    }
+    // var arr = [1,5,6,9,8,7,3]; // 2,4
+    var startDate = new Date();
+    var arr = getFF(885,9954);
+    var cc = paixu(arr);
+    var dd = getQS(cc);
+    var endDate = new Date();
+    console.log(dd);
+    console.log(endDate - startDate);
+  </script>
+</body>
+</html>

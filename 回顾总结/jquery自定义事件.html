@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" required>
+<input type="text">
+<!--两个输入框都输入了内容  触发一个输入成功事件  heima49.success -->
+<script src="jquery/jquery.min.js"></script>
+<script>
+    /*绑定*/
+    $('body').on('heima49.success',function () {
+        console.log('ok');
+    });
+    $('input').on('keyup',function () {
+        if($('input:eq(0)').val() && $('input:eq(1)').val()){
+            /*两个输入框都输入了内容*/
+            $('body').trigger('heima49.success');
+        }
+    });
+</script>
+</body>
+</html>

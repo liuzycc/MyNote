@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    
+    //去重并排序 [5,2,3,6,8,6,5,4,7,1,9]
+    //如果是统计出现次数最多的元素，则使用对象 重复一次 value + 1
+    function fn(arr)
+    {
+      var tempArr = [];
+      for(var i=0;i<arr.length;i++)
+      {
+        if(tempArr.indexOf(arr[i]) == -1)
+        {
+          tempArr.push(arr[i]);
+        }
+      }
+      //到这里就是已经去重的数组了
+      //开始排序
+      for(var j=0;j<tempArr.length-1;j++)
+      {
+        for(var c=0;c<tempArr.length-1-j;c++)
+        {
+          if(tempArr[c] > tempArr[c+1])
+          {
+            var temp = tempArr[c];
+            tempArr[c] = tempArr[c+1];
+            tempArr[c+1] = temp;
+          }
+        }
+      }
+      return tempArr;
+    }  
+
+    //测试
+    var arr = [5,2,3,6,8,6,5,4,7,1,9];
+    var newArr = fn(arr);
+    console.log(newArr); //[1, 2, 3, 4, 5, 6, 7, 8, 9]  正确
+    //数组去重filter 过滤器
+      var arr = [5,2,3,6,8,6,5,4,7,1,9];
+      var r = arr.filter(function (x,i,arr) {
+        console.log(arr);
+        console.log(x);
+        console.log(i);
+        return x % 2 == 0;
+      });
+      console.log(r);; // [1, 5, 9, 15]
+
+
+
+      //ES6
+      function dedupe(array) {
+        return Array.from(new Set(array));
+      }
+
+      dedupe([1, 1, 2, 3]) // [1, 2, 3]
+  </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>调用封装ajax方法</title>
+</head>
+<body>
+  <!-- <script src='ajax.js'></script> -->
+  <script src='teacherAjax.js'></script>
+  <script>
+    var str = 'id=15&username=张三&age=18&gender=m';
+    ajax('get','index1.php',str,function(data){
+      console.log(data);
+      // console.log(JSON.parse(data));
+    })  
+    ajax('post','index1.php',str,function(data){
+      console.log(data);
+      // console.log(JSON.parse(data));
+    })  
+
+  </script>
+</body>
+</html>

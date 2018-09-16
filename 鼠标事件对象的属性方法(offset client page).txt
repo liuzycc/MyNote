@@ -1,0 +1,8 @@
+e = event || window.event
+e.offsetX   e.offsetY   表示鼠标距离当前元素的距离
+e.clientX   e.clientY   表示鼠标在可视区域的距离
+e.pageX     e.pageY     表示鼠标相对于文档的距离
+
+
+e.target  获取当前触发事件的元素
+e.target.nodeName  获取当前触发事件的元素的名称 的大写字母  例如： 'IL'

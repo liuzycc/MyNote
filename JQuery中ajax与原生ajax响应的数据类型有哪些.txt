@@ -1,0 +1,7 @@
+jQuery的$.ajax方法响应数据类型有如下几种:
+
+xml\html\script\json\jsonp\text
+
+本质上原生ajax响应数据格式只有2种 : xml和text
+
+分别对应 xhr.respinseText 和 xhr.responseXML

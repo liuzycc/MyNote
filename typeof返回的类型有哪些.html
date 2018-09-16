@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>检测数据类型typeof</title>
+</head>
+<body>
+    <script>
+    //检测数据类型typeof
+    var num = 123;
+    var str = 'abc';
+    var bool = true;
+    var arr = [1,2,3];
+    var json = {name:'jim',age:25};
+    var func = function() {
+        console.log(1);
+    }
+    var und = undefined;
+    var nul = null;
+    var date = new Date();
+    var reg = /^[a-zA-Z]{5,20}$/;
+    var error = new Error();
+    console.log(typeof num);
+    console.log(typeof str);
+    console.log(typeof bool);
+    console.log(typeof arr);
+    console.log(typeof json);
+    console.log(typeof func);
+    console.log(typeof und);
+    console.log(typeof nul);
+    console.log(typeof date);
+    console.log(typeof reg);
+    console.log(typeof error);
+    // 从输出结果来看，arr,json,nul,date,reg,error全部检测出来是object类型，其他变量能够被正确检测出来
+    //当需要检测的变量是number,string,boolean,function,undefined,json类型时，可以使用typeof进行判断
+    //其他变量是判断不出类型的，包括null;
+
+    //typeof是区分不出array和json类型的。因为使用typeof这个变量时，输出的都是object；
+    
+    
+    </script>
+</body>
+</html>

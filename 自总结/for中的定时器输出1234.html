@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    for (var i = 0; i < 5; i++) {
+      var vv = i;
+      setTimeout(function (i) {
+        console.log(i);
+      }(i), 10000000-i*10000)
+    }  
+    for(var c=0;c<2000;c++)
+    {
+      console.log(1);
+    }
+
+    // setTimeout(function(){
+    //   console.log(1);
+    // },10000);
+    // setTimeout(function(){
+    //   console.log(2);
+    // },1000);
+    // console.log('开始了啊');
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <input type="file">
+  <button>上传</button>
+  <script src='../jquery-3.3.1.js'></script>
+  <script>
+  
+  $(function(){
+    $('button').on('click',function(){
+      var formdata = new FormData();
+      formdata.append('file',$('input')[0].files[0]);
+      //开始上传
+      $.ajax({
+        type:'post',
+        url:'index.php',
+        data:formdata,
+        cache: false,
+        contentType: false,
+        processData: false,
+        success:function(res){
+          console.log(res);
+        }
+      });
+    })
+  })
+  
+  </script>
+</body>
+</html>

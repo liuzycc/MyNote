@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    var arr = [5,6,8,8,2,7,2];
+    var newArr = [...new Set(arr)];
+    var cc = new Set(arr);
+    console.log(cc);
+    console.log(newArr);
+    var str = '123456'; 
+    console.log(Array.from(str));
+
+    function dd(){
+      var foo = 1;
+      function foo(){};
+      return foo;
+    }
+    console.log(dd());
+    //js
+  </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+        // var length = 10;
+        // function fn(){
+        //   console.log(this.length);
+        // }
+        // var obj = {
+        //   length:5,
+        //   method:function(fn){
+        //     fn();
+        //     arguments[0]();
+        //   }
+        // }
+        // obj.method(fn,1);
+
+
+        var cc = '123';
+        function a (){
+          console.log(this.cc);
+        }
+        function b(){
+          arguments[0]();
+        }
+        b(a,1);
+
+        arguments = {
+          0:function fn(){console.log(this)},
+          1:1,
+          length:2
+        }
+  </script>
+</body>
+</html>

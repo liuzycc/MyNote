@@ -1,0 +1,25 @@
+
+offset
+
+元素.offsetTop   元素.offsetLeft   表示相对于有定位的父元素的位置的距离，如果没有定位则相对body位置的距离
+
+
+元素.offsetWidth   元素.offsetHeight  表示元素的大小   width + padding + border
+
+
+元素.offsetParent  获取元素的最近的带有定位的上级元素
+
+
+client
+
+元素.clientTop   元素.clientLeft   表示元素的border的厚度
+
+元素.clientWidth  元素.clientHeight   表示元素的 width + padding
+
+scroll
+
+元素.scrollTop  元素.scrollLeft    表示元素被卷去的距离
+
+元素.scrollWidth  元素.scrollHeight  表示元素的  width + padding + 溢出的部分
+
+

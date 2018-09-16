@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>樱花下落</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    .box {
+      width: 10px;
+      height: 10px;
+      background-color: red;
+      border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      animation-name: move;
+      animation-duration: 7s;
+      animation-iteration-count:infinite;
+    }
+    @keyframes move {
+      100% {
+        left: 50%;
+        top: 100%;
+        /* bottom: 0; */
+      }
+    }
+    .car {
+      width: 100px;
+      height: 10px;
+      background-color: green;
+      border: 1px solid #000;
+      position: absolute;
+      left: 0;
+      bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+  <div class="car"></div>
+  <script>
+    window.onload = function(){
+      document.onmousemove = function(e){
+        var x = e.pageX + 'px';
+        endPlace(x,'100%');
+      }
+    }
+    function endPlace(left,top){
+
+      //改变小车位置
+      var car = document.querySelector('.car');
+      var carLeft = parseInt(left);
+      var width = window.innerWidth;
+      if(carLeft < 50)
+      {
+        carLeft = 0;
+      }
+      else if(carLeft > width - 100)
+      {
+        carLeft = width - 100;
+      }
+      car.style.left = carLeft + 'px';
+      //改变樱花落下位置
+      var str = 'left:'+ left +';top:'+ top+';';
+      //获取样式表里面的2个规则  可以打印看下就知道了
+      var key = document.styleSheets[0].rules[2].cssRules[0];
+      key.style.cssText = str;
+    }
+
+
+    
+  </script>
+</body>
+</html>
