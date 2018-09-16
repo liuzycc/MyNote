@@ -1,3 +1,7 @@
+##SSH
+- 使用git bash 执行 ssh-keygen -t rsa
+- 找到 C:\Users\Administrator.ssh\id_rsa.pub 且复制内容
+- 去代码托管平台 配置新的KEY 内容为刚才复制的内容。
 
 ##用户信息
 配置个人的用户名称和电子邮件地址：
