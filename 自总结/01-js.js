@@ -1276,6 +1276,18 @@ window.addEventListener('offline', function () {
 
   eval('1+1')//2 返回的是Number类型  //可以进行字符串运算
 
+  ------ ZiRoom start ------
+  // getScript 可以执行一个js文件
+  1.$.getScript("b.js", function() {
+    alert(var1 + func1());//var1 func1 分别是 b.js 中的全局变量成员 这里直接就可以拿到并且使用
+  });
+
+  2.axios请求json文件 只能用get请求  如果用post会报404
+  this.$axios.get('http://xxxxxx.js',{})
+      .then((response)=>{console.log(response)})
+      .catch((err)=>{console.log(err)})
+  ------ ZiRoom end -------
+
 
 
 
