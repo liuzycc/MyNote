@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    
+    (function(){
+      console.log(1);
+      setTimeout(function(){console.log(2)},1001);
+      setTimeout(function(){console.log(3)},1000);
+      console.log(4);
+    })();
+
+    //里面有定时器会发生闭包
+    // (function(){
+    //   function test(){
+    //     var cc = 123;
+    //     setTimeout(function(){
+    //       cc += 1;
+    //       console.log(cc);
+    //     },1000);
+    //   }
+    //   test();
+    // })()
+
+      setTimeout(function () {
+        console.log(2);
+      }, 400);
+
+      for (var i = 0; i < 20000; i++) {
+        console.log(4);
+      };
+
+      setTimeout(function () {
+        console.log(3)
+      }, 300);
+      //队列是先进先出  栈是先进后出
+      //当i<2000时 结果  4..  2  3
+      //当i<20时   结果  4..  3  2
+      //当setTimeout加入队列的堵塞时间大于这两个定时器的执行时间时
+      //先加入队列的定时器，先执行, 尽管它里面设置的时间可能比另一个setTimeout的要大
+
+      
+      //当setTimeout加入队列的堵塞时间小于这两个定时器的执行时间时
+      //那么就按照定时器触发时间的先后执行
+ 
+  </script>
+</body>
+</html>

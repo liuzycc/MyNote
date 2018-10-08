@@ -1,0 +1,2 @@
+decodeURIComponent('str')  ACSOLL码转中文
+encodeURIComponent('str')  中文转ACSOLL码

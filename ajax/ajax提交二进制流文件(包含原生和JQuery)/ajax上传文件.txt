@@ -1,0 +1,26 @@
+      var file = this.files[0];
+      var formdata = new FormData();
+      formdata.append('file',file);
+      console.log(file);
+      //ajax上传
+      $.ajax({
+        type:'post',
+        url:'api/updatefile.php',
+        data:formdata,
+
+        cache: false,
+        contentType: false,
+        processData: false,
+
+        success:function(res){
+          
+          res = JSON.parse(res);
+          var data = res.result;
+          console.log(res);
+          if(res.success)
+          {
+            $('#img_avatar').attr('src',data.path);
+            alert('保存成功');
+          }
+        }
+      })

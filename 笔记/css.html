@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>样式选择器</title>
+	<style>
+		* {
+			font-size: 1cm;
+		}/*通配符选择器*/
+		h1 {
+			background: yellow;
+		}/*标签选择器*/
+		p {
+			border: 5px solid red;
+		}/*标签选择器*/
+		p.a {
+			color: blue;
+		}/*复合择器*/
+		.b {
+			color: blue;
+		}/*类选择器*/
+		#one {
+			font-size: 2cm;
+			color: green;
+		}/*id选择器*/  
+		div p {
+			color: blue;
+		}/*后代选择器 只要包含就行*/
+		div>p {}/*直接下一代*/
+		h2,h3 {
+			color: blue;
+		}/*并集选择器*/
+		a:link {
+			color: blue;
+		}/*伪选择器 link未访问 visited访问过了 hover停留时 active点击时 */
+		input:focus{}/*focus获取焦点时*/
+		</style>
+</head>
+<body>
+	<h1>这是h1标签</h1>
+	<P>这是p标签</P>
+	<P class="a">这是p标签</P>
+	<P class="b">这是p标签</P>
+	<P id="one">这是p标签</P>
+	<div><P>这是p标签</P></div>
+	<h2>这是h2标签</h2>
+	<h3>这是h3标签</h3>
+	<a href="http://i.baidu.com2/">人中心</a>
+	<a href="http://i.baidu.com1/">人中心</a>
+    <!-- 简写 -->
+	.nav>#nav_l+#nav_r${内容}*3+a[#]{链接}*2
+	nav[class="$"]*4
+	a[#]{链接$}*5
+	(.a>.b)+.c>.d
+	header+nav+section>article+aside^footer
+</body>
+</html>
+
+文字样式font-style: italic;
+文字加粗font-weight: 900;(100-400(normal)-700(bold)-900)
+字体大小font-size: 40px;
+  行高  line-height: 200px;
+设置字体font-fanily: microsoft yahei;
+  文字  font: normal 700 14px/30px \5B8B\4F53;(italic斜体 粗细 字体大小/行高 宋体)
+
+文字颜色color：rgba(0,0,0,0.7);
+ 透明度 opacity: 0.1;(取值0-1); 
+ 		filter:Alpha(opacity=50);(IE8浏览器)
+文本缩进text-indent: 2em;(-5000px 内容移出 用于logo)
+文本居中text-align:left;(left center right)	
+文字间隔letter-spacing: 0.8cm;
+空格间隔word-spacing: 0.8cm;
+
+背景颜色background-color: red;
+背景图片background-image: url();
+背景重复background-repeat: repeat-x;
+背景位置background-position: 20px 50px;(right center)
+  背景  background: red url(2.png) no-repeat right bottom;（颜色 图片 不重复 位置）
+
+背景固定background-attachment: fixed;
+
+  边框  border: 5px solid red;(宽度 样式 颜色)(none dotted点线 dashed虚线 solid实线 double双实线)
+边框圆角border-radius: 10px;
+背景图片缩放border-size: 100px;
+表格边框合并border-collapse: collapse;
+ 外边距 margin: 2px auto;(auto自动)
+ 内边距 padding: 1px 2px;
+
+去掉ulol前面的样式list-style: none;
+
+设置一个图片做为标号list-style-image: url();
+行内块垂直对齐方式vertical-align: top;(middle bottom 只真对与行内块img input)
+块元素居中margin: 0 auto;(只真对于块元素div等)
+转换显示display:inline-block;(block转化为块元素 inline-block转化行内块元素 inline转化为行内元素 none不显示连位置都没有)
+
+  隐藏  visibility:hidden;（有位置只是隐藏）
+浮动盒子排列float: left;
+			margin: 0px 10px;
+去下划线text-decoration: none;（underline下划线 line-through删除线 中划线）
+绝对定位position:absolute;/*absolute绝对 relative相对 static静态 fixed固定*/
+		top:40px;
+		left:700px;
+相对定位position:relative; （可以用在链接上 更明显）
+		top:5px;
+		left:5px;	
+覆盖关系z-index:10;（2个元素谁的值大谁在前面 前提真对定位元素而言）
+超出部分overflow:auto;(hidden超出隐藏 scroll加滚动条 auto超出才加滚动条 visible超出显示)
+
+鼠标小手
+cursor:crosshair">十字鼠标
+cursor:pointer">小手鼠标
+cursor:move">选中鼠标
+cursor:wait">等待鼠标
+cursor:help">问号鼠标
+cursor:move;移动鼠标
+
+兼容性问题border:5px solid blue;
+		  padding: 10px 20px;
+		  margin:20px;
+		  width:250px !important;/*非ie显示*/
+		  width:300px;		     /*ie显示*/
+		  height:270px !important;
+		  height:300px;
+兼容性问题height:10px;(ie低本版高度小于10px 按18px)
+		  overflow:hidden;
+
+兼容性问题IE5.5下的盒子剧中方式
+body{text-align: center;}
+.box{text-align:left;margin:0 auto;}(IE5.5下不识别margin)
+
+兼容性问题filter:alpha(opacity=20);（真对ie6 的透明度 取值1-100）
+
+兼容性问题IE6下左右margin会加倍
+解决办法(display:inline)
+.box{width:9px;height:9px;background:red;
+	 margin:9px;float:left;display:inline;}
+兼容性的两句话
+(能用padding做的，坚决不用margin做，实在想用就用一边做)
+(对于图片能用背景做的，坚决不用img做)
+
+兼容性问题css hack
+body{color:red;
+*color:green;/*IE6 7 识别*/
+_color:blue;/*IE6 识别*/
+/*CSS hack编写顺序：普通预览器-IE7-IE6*/}
+
+嵌套盒子垂直方向子盒子margin-top:;塌陷问题的解决：
+1.可以给父盒子border: 1px solid red;
+2.可以给父盒子overflow:hidden;(触发bfc 浮动和一些定位也可触发bfc)
+
+input一些好的用户体验
+1.获取连带焦点<label for="s">用户：</label><input id="s" placeholder="" required="">
+还有一种写法<label><input type="text"></label>(label标签直接包裹input标签 注意不能有for 有for没用 有for必须跟id)
+2.获取焦点 :focus{}
+3.去除轮廓线outline-style: none;
+对于<textarea></textarea>防脱拽 resize:none;
+
+细线表格宽高固定
+table{width: 300px;heigth: 300px;
+	border: 1px solid red;
+	border-collapse: collapse;}
+tr{heigth: 100px;}
+td{width: 100px;border: 1px solid red;}
+
+清除浮动的方法
+1.最后一个浮动元素后面加额外标签使用类样式clear: both;
+2.在父盒子上overflow：hidden;
+3.给父盒子设置高度
+4.在父盒子上.clearfix:after{
+	display: block;content: ".";
+	height: 0;line-heigth: 0;
+	visibility: hidden;
+	clear: both;}
+	.clearfix{zoom: 1;}
+
+盒子中背景图片不受内边距影响
+background: url() no-repeat left;
+padding-left: 10px;(不会影响背景图片的位置)
+
+完全居中border: 2px solid red;
+		height: 200px;
+		width: 400px;
+		background: green;
+		position:absolute;
+		top:50%;
+		left:50%;
+		margin-top: -100px;
+		margin-left: -200px;	  
+
+对于区别？
+display:none; 		不占据位置 配合JS制作选项卡
+overflow:hidden; 	超出部分不显示 可触发BFC解决 嵌套盒子外边距塌陷、清除浮动 配合JS制作滚动效果
+visibility:hidden;  占据位置 是透明的效果 目前只在清除浮动中用到 
+
+宋体：\5B8B\4F53 simsun
+微软雅黑：\5FAE\8F6F\96C5\9ED1 microsoft yahei
+查找字体编码：F12 escape("宋体")
+
+优先级：继承<默认样式<*<标签选择器<类选择器<id选择器<行内样式<!important 
+权重依次增大  
+（       0                  1         10       100      1000      1000  ）(为什么行内样式的优先级高 因为JS不能直接操纵CSS 能通过行内样式)
+(类选择器<属性选择器=伪类选择器)
+继承的权重为0（一般 默认样式<继承）
+(a的颜色和h的文字大小 不是不能被继承 而是s受自有样式影响)
+优先级相同 按层叠性显示(后手覆盖前手)
+指定同一标签权重可以叠加（毕竟是估计别认真）
+
+内容：content
+导航：nav  
+子导航：subnav
+侧栏：aside/sidebar
+专栏：column
+包装：wrapper
+登录条：loginbar
+标志：logo
+广告：banner
+页面主体：main
+热点：hot
+新闻：news
+下载：download
+菜单：menu
+子菜单：submenu
+搜索：search
+友情链接：friendlink
+版权：copyright
+滚动：scroll
+服务：sertive
+首页：index
+市场：market
+脚本：script
+用户名：username
+邮箱：email
+父亲：father
+儿子：son
+
+
+C3属性
+
+圆角半径：border-radius=50%;(可以拿正方形制作圆形)
+		  border-radius= 1px 2px 3px 4px/1px 2px 3px 4px;(上左 上右 下右 下左)
+	
+文字浮雕: text-shadow: 1px 2px 0 red,1px 2px 0 blue; 
+颜色可以换成hsla(360,100%,30%,1) 色调0-360(0红 120绿 240蓝 PS中色相环) 饱和度（0-100%） 亮度（0-100%） 透明度0-1
+(文档流的方向 依次是 水平方向偏移量 垂直方向偏移量 羽化 颜色)
+color: transparent; 透明的
+结构伪类选择器
+:first-child{}
+:last-child{}
+:nth-child(an+b){} (0=<n系统取值)(选前三个-n+3 顺序不能变)
+		 取奇数odd  或 2n+1
+		 取偶数even 或 2n
+:nth-last-child(an+b){} (倒这选)
+<ul>(n的取值涉及本层的全部元素 但只能给该元素加)
+	<span>0</span> li:first-child{} li:nth-child{} 全部指向span失效
+	<li>1</li>
+</ul>
+目标伪类选择器
+#img:target{z-index: 1;}  (配合 设置锚点的元素 当发生锚点跳转时该伪类生效)
+发生跳转时z-index为1 否则恢复默认值auto;(对于这一点 :hover :target 条件满足时属性为里面的值 一旦条件不满足恢复到之前的值！！！！！！)
+
+盒子中英文不会换行
+word-break:break-all;(文字自动换行 其实只针对英文 中文本来就换行)
+word-break:keep-all;(需要手动设置一个空格或（-）来换行)
+字间距:letter-spacing:30px;
+word-spacing(单词与单词之间的距离 需要设置空格)
+
+设置input中 placehlder属性 兼容性写法
+input::-webkit-input-placeholder{} 
+     ::-moz-placeholder{}
+     :-ms-input-placeholder{}
+input::placeholder{}
+
+::first-line{} 		选中文本第一行
+::first-letter{} 	选中文本第一个字
+::selection{} 		选中时样式 只能设置颜色属性（color background-color）
+
+img input这些行内块元素 可以转block inline 但是其宽高就是自己设置的宽高
+
+伪元素 (before在内容的最前面 after在内容的最后面 IE浏览器不支持::  兼容写法用:)
+div::before{
+	display:inline-block; 伪元素属于行内元素
+	content:'';           必须设置
+	width:10px;height:10px;
+}
+.clearfix:after{}  伪元素清除浮动
+
+背景尺寸
+background-size:200px 300px; (背景宽高 给一个值为宽 背景等比例缩放)
+				cover   按比例缩放 占满父元素
+				contain 按比例缩放 背景完全放入
+
+多背景
+background:url() no-repeat left top,
+		   url(./img/bg2.png) no-repeat right top,
+		   url(./img/bg4.png) no-repeat 30px 30px/300px 200px,(背景图 不平铺 位置 背景大小)
+	  #fff url(./img/bg5.png) no-repeat center center;
+(前者url覆盖后者url 背景颜色需要在最后一个url前面写或者在来个,#fff或者单独写)
+线性渐变
+background-image: linear-gradient(to right,#000,#fff);
+background-image: linear-gradient(135deg,red,blue);
+background-image: linear-gradient(
+        		 	 135deg,   顺时针旋转的角度 度数 (0度从下到上 90度从左向右)（渐变的范围%是相对父容器宽度 如果设置background-size简便的范围相对该属性的值）
+        		 	 blue 33%,
+					 #fff 33%,
+					 #fff 66%,
+					 blue 66%
+        		 ); (滚动条的制作颜色奇数比较方便 配合background-size)
+
+径向渐变
+background-color: red;
+background-image: radial-gradient(600px at center 10px,red,blue);
+（背景颜色与渐变叠加）
+（可以通过关键字和具体的值设置圆心位置 设置一个半径值 垂直半径默认和水平一样）
+(设置10px 20px at第一个为水平半径 第二个为垂直半径)
+
+背景过滤 （仅iphone有效）
+backdrop-filter: blur(10px)
+
+box-sizing:content-box (wh为 内容) 
+		   padding-box (wh为 padding+内容)
+  		   border-box  (wh为 border+padding+内容)（不用计算做减法）
+
+盒子阴影(这里的盒子指的是标签所占的区域 a img 标签一样可以用该属性)
+box-shadow:inset 1px 2px 3px red;（默认外阴影 设置inset内阴影）
+
+触发bfc的方式 1. overflow:hidden; 
+			  2. float(浮动);
+			  3. position:absolute;
+			  4. position:fixed;
+	可以解决 外边距塌陷 清除浮动
+
+垂直居中只能用在 img input table 等一些inlin-block元素上
+vertical-align:baseline;(默认基线对齐) top middle bottom 
+实现行内块垂直居中 先设置行高 然后在设置vertical-align
+
+logo 优化 color: transparent; font-size:0px; text-indent:-5000px;
+
+z-index(定位的层级关系 只有定位才有效果)(子元素 在 父元素上面 与z-index的值无关)
+如果值相同 后来居上
+如果父元素设置了定位 父元素定位的值越大 子元素层级越高  父带子
+
+(一般用子绝父相 绝对定位相对的是 最近的 使用过定位的父层元素（除静态定位）； 相对定位相对自身 仍占据原有位置； 固定定位 始终相对窗口)
+
+定位方式的脱标 完全只影响其后手元素；
+浮动方式的脱标 前手是块元素 就只影响其后手 ；前手为文本性质的元素 与文字饶图效果相似 （浮动元素会跑到 文本性质的元素 前面, 但是宽度不够了 就不会发生 其实为避免这些情况 要浮动都浮动）
+
+针对块元素居中margin:0 auto;
+针对行内元素a 行内块img input居中 text-align:center;
+针对浮动元素居中 用伸缩盒子
+
+浮动可以触发bfc解决外边距塌陷 无论是 自身浮动还是 父盒子浮动 都是有效的
+
+button 的value值 在页面显示默认就是水平垂直居中的 无需在次设置
+外边距塌陷只发块元素之间
+
+web字体
+下载到本地使用 引用外链样式.css 调用对应类 （若要移动复制 一定整体移动 字体多种格式 不能指移动css文件）（.ttf .otf .woff .eot .svg）
+
+过度属性 
+transition-property: all;(可以只针对多个属性width)
+transition-duration: 1s;
+transition-delay: 1s;
+transition-timing-function:ease;(linear ease-in ease-out ease-in-out)
+transition: all 1s 1s linear;（全部属性 1S过度 1s等待 由正常状态过度到hover）(注意定位的过度必须给A状态设置初始值)
+
+2D转换
+transform: translate(10px,20px) rotate(30deg) scale(2,2) skew(30deg,30deg);
+（translate 一个值只代表水平位移量 可以设置% 相对自身）(该位移与相对定位很像 仍会占据原有位置 但什么都不改变)(多了一种定位绝对居中方式)
+（rotate 默认顺时针旋转 按中心点旋转）(受transform-origin影响)
+（scale 只能设置倍数 一个为水平和垂直方向 以中心点缩放）(受transform-origin影响)
+（skew 一个值代表水平方向的倾斜）
+transform-origin: 20px 20px;（旋转位置可设置关键字left top）(一般给A状态设置该属性 如果设置B状态 是由中心 过度到 你设置的哪个！！！！！！)
+
+透视 perspective:;(不是必须设置 推选800-1000px方便)
+
+3D转换(每个盒子有自己的轴 左手法则)
+transform-style: preserve-3d;(转换为立体)
+transform: translateX();
+transform: translateY();
+transform: translateZ();
+transform: translate3d(50%,50%,0);
+transform: rotateX();
+transform: rotateY();
+transform: rotateZ();
+transform: scaleX();
+transform: scaleY();
+transform: scaleZ();
+
+动画
+定义动画集
+@keyframes name{
+			from{
+			}
+			to{
+			}
+		}
+调用
+.box{
+	animation: name 1s 1s linear infinite alternate forwards;
+}
+animation-name: name; 	 动画名字
+animation-duration: 2s;  执行时间
+animation-delay: 1s; 	 延迟时间
+animation-timing-function: linear;   速度类型
+animation-iteration-count: infinite; 执行次数
+animation-direction: alternate; 	 动画逆波 (reverse 倒序执行)
+animation-fill-mode: forwards; 		 停留在结束时的状态
+
+.box:hover{
+	animation-play-state: paused;  	 动画暂停 作用在设置了动画的元素上
+}
+复合写法 animation: name 1s 1s linear infinite alternate forwards,b 1s linear;
+linear还有一种写法steps(60)60帧相对动画的执行时间分为60步
+(一个标签可以同时调用多个动画集，使用逗号隔开)
+定义动画中状态的其他方式: (%是相对动画的执行时间)
+	@keyframes name{
+		0%{}
+		30%{}
+		100%{}
+	}
+
+伸缩布局【弹性布局】(flex)
+直接父元素设置为伸缩盒子display: flex;
+特点：1.水平主轴 垂直副轴。
+	    2.所有的子元素都是按照主轴方向显示。
+调整主轴方向 
+flex-direction: row; 左到右(默认值)
+				row-reverse;
+				column;      上到下
+				column-reverse;
+设置子元素在主轴的对齐方式   主轴默认情况下
+justify-content: flex-start; 左
+				 flex-end;   右
+				 center;     中
+				 space-between; （左 右 中间自适应）
+				 space-around;（每个子元素2边间距相等 环绕模式）
+设置子元素在侧轴的对齐方式
+align-items: flex-start;  上
+			 flex-end;    下
+			 center;      中
+			 baseline;
+			 stretch; (默认值)
+
+设置子元素超出父元素后，换行显示(默认不换行 nowrap)
+flex-wrap: wrap;
+flex-flow: row nowrap; 是flex-direction 和 flex-wrap 的简写
+换行后整体的垂直方向 对齐方式(前提必须换行 前提必须换行 前提必须换行)
+align-content: flex-start;
+			   flex-end;
+			   center; 
+			   space-between;  垂直方向 （上 下 中间自适应）
+			   space-around;   
+			   stretch;
+以上属性都是给父元素设置的。
+
+
+伸缩盒子中子元素相关的属性(前提直接父元素是伸缩盒子display: flex;)
+align-self:; 定义单独一个子项 在侧轴的对其方式
+auto (默认继承父元素align-content 没有取stretch) flex-start (上) flex-end (下) center (中) baseline  stretch
+给子元素设置flex:值; 沿主轴 占的份数 如果伸缩盒子中已经有了固定宽度的盒子，那么占的份数 指的是相对父元素中余下的宽度的比例;
+flex 属性是 flex-grow flex-shrink flex-basis 的简写
+flex-grow:;   子元素分配父元素剩余空间比 默认为0
+flex-shrink:; 当所有子元素的宽度和超出父元素时 子元素都要做收缩 该项设置收缩比 默认1
+flex-basis:20%;  子元素所占宽度 设置百分比基于父元素 默认为auto
+order:;值越大在网页中的显示位置越靠后 (靠后指标准流方向 flex-wrap不会影响 还是标准流的最后面)
+
+实现水平和垂直方向 都贴边 中间自适应模式
+也能实现水平垂直都居中
+display: flex;
+justify-content: center;
+align-items: center;
+
+在 @keyframes 中坐标系不会发生变化
+  多个@keyframes 坐标系共用
+transform: translate3d(0,0,0)
+
+min-width:200px;
+max-width:300px;(指浏览器缩放的最大宽度 和最小宽度)
+
+图片缩放
+父元素固定宽高 不能是% 子盒子宽高100% padding会影响
+.box{ width:100px; height: 100px; padding: 10px;}
+img{ width: 100%; height: 100%;}
+
+浮动元素 继承行高也会吧盒子撑开 盒子高度
+
+行高 可以单独设置 代表 一行的高度 如果此时没有高度 默认是剧中的 一般<p><br></p>就已经是2行了
+
+border-weight: 10px; 不设置border-style 默认是none 设置别的都没用 连写除外
+a:link只会匹配拥有href属性的a链接 <a>这种写法 不会匹配
+半透明 opacity:0.5 其中的文字也会实现半透明
+
+强势法 box-sizing:border-box;强行padding挤
+
+裁剪法 定位元素被父元素overflow: hidden;裁剪
+制作ul li4*3中间线 给ul的父盒子设置overflow: hidden;裁剪 ul 宽高超过父盒子一点
+鼠标放上图片过度变大 父容器overflow：hidden;切
+
+宽度剩余法 dl 高度剩余法dt dd
+
+div[class="a"]{} 	属性选择器
+div[class^="a"]{} 	选择class子字符第一个含有a 
+div[class$="a"]{} 	选择class子字符最后一个含有a 
+div[class*="a"]{} 	选择class子字符中含有a 
+div[class][id]{} 	选择既有class又有id 
+
+dt + dd{}  	兄弟选择器  选择dt后面的所有dd 前提dt 与 dd有共同的父元素
+
+垂直方向上 外边距塌陷 margin-top margin-bottom 都有可能发生 
+
+父元素宽度固定 子元素平分其宽度
+.parent{ display: table; width: 900px;}
+.son{ display: table-cell;}
+块级子元素垂直居中
+.parent { display: table;}
+.son {display: table-cell; vertical-align: middle;}

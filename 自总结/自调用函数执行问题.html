@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    f = function () { return true; };
+    g = function () { return false; };
+    // function abc(){
+    //   console.log(g);
+    // }
+    // abc();
+    (function () {
+      console.log(g);
+      if (g() && [] !== ![]) {
+        f = function f() { return false; };
+        function g() { return true; }
+      }
+    })();
+    alert(f()); // true or false ?
+  </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>对象深拷贝</title>
+</head>
+<body>
+  <script>
+    function Student(stuid,name,sex)
+    {
+      Person.call(this,name,sex); //构造函数继承
+      this.stuid = stuid;
+    }  
+    function Tearcher(tearid,name,sex)
+    {
+      Person.call(this,name,sex);
+      this.tearid = tearid;
+    }
+    function Person(name,sex)
+    {
+      this.name = name;
+      this.sex = sex;
+    }
+    Person.prototype.say = function(){
+      console.log('我是公共的say');
+    }
+    Person.prototype.arrPublic = [1,2,3,4,5,6];
+    //开始拷贝
+    //原型继承方法
+    function copy(parent,son)
+    {
+      for(var key in parent)
+      {
+        if(son[key] == undefined)
+        {
+          son[key] = parent[key];
+        }
+      }
+    }
+
+    copy(Person.prototype,Student.prototype);
+    copy(Person.prototype,Tearcher.prototype);
+    Student.prototype.aa = function(){
+      console.log('我是student新增加的方法aa');
+    }
+
+    var stu1 = new Student('学生学号','张三','f');
+    var tear1 = new Tearcher('老师学号','刘老师','m');
+    console.log(stu1);
+    console.log(tear1);
+
+
+
+    //深拷贝方法
+      function deepCopy(parentObj, childObj) {
+        for (var key in parentObj) {
+          if (childObj[key] === undefined) {
+            if (parentObj[key] instanceof Array) {
+              childObj[key] = [];
+              deepCopy(parentObj[key], childObj[key]);
+            }
+            else if (parentObj[key] instanceof Object) {
+              childObj[key] = {};
+              deepCopy(parentObj[key], childObj[key]);
+            }
+            else {
+              childObj[key] = parentObj[key];
+            }
+          }
+        }
+      }
+    
+  </script>
+</body>
+</html>

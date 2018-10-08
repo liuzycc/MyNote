@@ -1,0 +1,215 @@
+
+头标签中 <base target="_blank" ><!--超链接优化写法 默认值 _self 设置为_blank 无论a标签target是什么都是_blank-->
+		 <meta http-equiv="content-type" content="text/html" charset="utf-8"><!--文字编码-->
+		 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		 <meta name="keywords" content="搜索的关键字" charset="utf-8">
+		 <meta name="description" content="搜索显示的主要内容" charset="utf-8">
+		 <meta http-equiv="refresh" content="300" charset="utf-8"> <!--过300S刷新页面-->
+		 <meta http-equiv="refresh" content="300;http://www.baidu.com" charset="utf-8"> <!--过300S跳到百度页面-->
+		 <link rel="icon" href=""><!--标题前面的小图标 .ico文件 一般放在根目录下-->
+在body中
+粗体     <strong></strong>  <b></b> 
+斜体	 <em></em>          <i></i> 
+删除线	 <del></del>        <s></s> 
+下划线   <ins></ins>        <u></u> 
+<font color="blue" size="7">蓝色7号字</font>
+	     <tt>打印机文字</tt>
+	     <cite>用于引证举例</cite>
+	     <small>小型字体</small>
+	     <big>大型字体</big>
+水平线   <hr color="#0000ff" width="80%">
+居中     <center></center>
+小于号   &lt;
+大于号   &gt;
+空格     &nbsp;
+"        &quot;
+&        &amp;
+¥		 &yen;
+©		 &copy;
+<sup>上角标</sup>
+<sub>下角标</sub>
+按原文显示<pre></pre>
+无序列表 <ul type=""><!-- type= disc实心小圆圈 square实心小方块 circle空心小圆圈 -->
+        	 <li></li>
+	 		 <li></li>
+	 	 </ul>
+有序排列 <ol type="" start=""><!-- type="1 a A i I" start="3" 从数字几开始 -->
+        	 <li></li>
+	 	 	 <li></li>
+	 	 </ol>
+自定义列表<dl>
+		  	<dt></dt>
+        	<dd></dd>
+ 		  </dl>
+ 滚动字幕 <marquee behavior="" direction=""></marquee>
+ 		  <!-- direction 滚动方向：up down left right
+ 		  	   scrollAmount 滚动速度
+ 		  	   scrollDelay  两步之间的停留时间，以毫秒为单位
+ 		  	   loop 循环次数-->
+超链接   <a href="" target="_blank" title="提示文本"></a>
+电子邮件链接<a href="mailto:xxx@yyy">
+  锚点   <a href="#aaa 或 .html#bbb">锚点</a>
+	 	 <a id="aaa"></a><!--设置锚点 有id找id 没id找name-->
+	 	 <p name="aaa"></p>
+	 	 <a href="#"></a>
+插入图片 <img  src="" alt="替换文本" title="提示文本" width="" height="">
+图像地图 <img  src="" usemap="#ttt">
+	 <!--指定图像地图 usemap="" -->
+	 	 <map name="ttt" id="ttt">
+         	<area shape="rect" coords="75,0,200,90" href="">
+ 			<!--  shape 形状(rect矩形 circle圆形 polygon多边形)   coords 点坐标(以图片为参照)        href 链接-->
+         </map>
+表格   <table  border ="" align="" cellpadding="" cellspacing="" bgcolor="" bordercolor="" width="" height="" >
+				 <caption>表格的标题居中</caption>
+		<tr><th>剧中加粗</th><th>剧中加粗</th><th>剧中加粗</th></tr>
+		<tr><td>正    常</td><td>正    常</td><td>正    常</td></tr>
+		</table>
+<!-- table  align         指表格的居中 （前提table的内外边距没去掉 去掉了 还是要用 margin:0 auto;居中） （表格默认至少有tbody 所以源生DOM找节点这一层要考虑）
+ 			cellpadding   内填充
+ 			cellspacing   个个边框的距离
+ 	 td th  align 		  指内容居中
+ 	 		rowspan       行合并几个
+ 	 	    colspan       列合并几个-->
+T分帧   <frameset rows="20%,*" frameborder="yes">
+	 		<frame noresize border="边框宽度" scrolling="no" src="">
+			<!--   frameborder边框线有没有 取值1,0,yes,no
+			noresize 定义了不能调整框架大小结构
+			scrolling="no" 不显示滚动条 取值 yes no auto-->
+			<frameset frameborder="1" border="2" cols="100,*">
+				<frame src="">
+				<frame src="">
+			</frameset> 
+		</frameset> 
+		<noframes>你的浏览器不支持框架
+		</noframes>
+		<!-- 行rows 列cols    frameset 与 body 冲突-->
+I分帧	<frameset cols="200,*">
+			<frame src="./1.html">
+			<frame name="asd" src="">
+		</frameset>
+		<!-- 行rows 列cols    frameset 与 body 冲突-->
+  1.html<a target="asd" href="http://www.baidu.com">baidu链接</a>
+        <a target="asd" href="http://pinyin.sogou.com">sogou链接</a>
+行内框架
+		<a target="a" href="">第一个内窗口</a><br>
+		<a target="b" href="">第二个内窗口</a><br>
+		<iframe name="a" width="" height="" src="">你的浏览器不支持框架</iframe><br>
+		<iframe name="b" width="" height="" src=""></iframe><br>
+		<!-- <iframe>与<body>不冲突 -->
+表单	<form action="1.hph" method="post" enctype="multipart/form-data" target="_blank">
+ <!--         action 数据传送到哪 (通过get方式传输)（输入的账号密码 是通过post方式传输的）
+ 	          method：通过什么方式传输（ post get ）get；什么都不写默认get方式 缺点；1.在地址栏上会显示提交的信息。2.空间有限。
+ 	     											post ：首选使用方式。
+上传文件必须是enctype="multipart/form-data"和post方式传输-->
+<label for="username">输出框</label><input id="username" type="text" size="输入区的长度" maxlength="最多能写几个字" name="" value="默认值" placeholder="占位符">
+           <!-- accesskey="u" 设置快捷键(如Alt+u) readonly 只读  disabled 未激活 禁用  -->
+ 	        密码框  <input type="password" name="">
+	      提交按钮  <input type="submit" value="提交" name="">
+       选择上传文件 <input type="file" name="" accept="image/*"> <!-- accept="image/*" 弹框只能显示对应的mime类型 -->
+		  重置按钮  <input type="reset" value="重置按钮" name="">
+		  图片按钮  <input type="image" src="" width="" height="" name="">
+		    JS按钮	<input type="button" value="button">
+		            <input type="hidden" name="" ><!--提交一些不想让用户看到的信息（包括name中的信息）-->
+            多选框	<input type="checkbox" name="1" value="吃">吃<br>
+					<input type="checkbox" name="1" value="喝">喝<br>
+			  		<input type="checkbox" name="1" value="游">游<br>
+			 		<!-- 复选框 name 都一样 在PHP中 以数组的形式来获取多个同名 name 的值 -->
+			单选框	<input type="radio" name="相同" value="男">男<br>
+		      		<input type="radio" name="相同" value="女">女<br>
+		      		<!--   同一组单选框 name 必须相同  checked 默认选中项  -->
+	多行文本输入框  <textarea rows="高度" cols="宽度" name=""></textarea>
+		  下拉列表  <select name="" ><!--列表不要下拉 在select属性加 multiple -->
+		  				<optgroup label="吉林市"><!--下拉列表分组-->
+				    		<option value="1">昌邑区</option>
+				    		<option value="2">龙潭区</option>
+				    		<option value="3">丰满区</option><!--selected=”selected”  设置默认选项-->
+				    	</optgroup>
+			        </select>
+		</form>  
+表单的分组<form action="" method="">
+		  	<fieldset>
+				<legend>注册信息</legend>
+				<input type="text"> 
+		  	</fieldset>
+		  </form> 	
+        
+HTML5 header+nav+section>artical+aside^footer  
+<header>页眉</header>
+<nav>导航</nav>
+
+<section>区块</section>
+<article>文章</article>
+<aside>侧边栏</aside>
+
+<footer>页脚</footer>
+<summary>摘要</summary>
+<details>详细资料</details><!--展开效果-->
+
+<mark>黄色背景重点标注</mark><!--加亮文本-->
+<progress value="当前值" max="最大值">进度条1-100</progress>
+
+<audio src="" controls autoplay loop></audio>音频标记(mp3 wav ogg)
+<!-- 支持多格式 -->
+<audio controls autoplay loop>
+	<source src="images/e123.mp3" type="">
+	<source src="images/e123.wav" type="">
+	<source src="images/e123.ogg" type="">
+	不支持！
+</audio>
+<video src="" controls autoplay loop width="" height="" poster="封面(路径)"></video>视频标记(mp4 ogg)(视频与图片不同 宽高都指定 不会压缩视频 所以一般宽高给一个)
+<!-- 支持多格式 -->
+<video controls autoplay loop poster="">
+	<source src="images/qwe.mp4" type="">
+	<source src="images/qwe.ogg" type="">
+	不支持！
+</video>
+生成加密字符串<keygen>
+在表单中span标签也可被<output></output>替代 有语义而已
+度量器
+<meter min="" max="" low="" high="" value=""></meter> value的值在low和high有3种颜色
+
+input中新增的属性
+<input type="submit" placeholder="占位符" required="必填项" form="表单ID(使得不在表单范围的submit也可操纵表单 很有用)" list="b">
+required     必填项(不填不会让你提交)
+pattern="\d+"自定义验证 等于一个正则表达式 \d代表数字 \D代表除了数字以外
+autofocus    自动获得焦点
+autocomplete 自动提示 取值 on off  可以加在form表单上
+novalidate   关闭验证
+multiple     多文件上传
+
+下拉列表形式的输入框
+<datalist id="b">
+	<option value="东京"></option>
+	<option value="吉林"></option>
+</datalist>
+
+新增input type属性的值
+	tel   电话验证(在移动端可以弹起键盘)
+	email 邮箱验证
+	number 数字(只能输入数字) step="5"每次改变5 min	max
+	url   网址验证
+	color 颜色拾色器
+	search  (只是具有语义化)
+	range  滑块 max min value默认位置
+	datetime 日期时间
+	date  日历
+	time  时间
+	month 几月份
+	week  第几周
+
+H5兼容常用标签 header+nav+section>article+aside^footer
+
+条件注释(lte小于等于IE 8 lt小于IE 9 调用插件) 在头部引入
+<!--[if lt IE 9]>
+	<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+原理：JS中创建对应标签 （创建出的元素是行内元素）
+document.createElement('header').style.display = 'block';
+
+微数据(可以使一些没有语义的标签 有语义 机器可识别)
+<div itemscope itemtype="http://data-vocabulary.org/Review">
+	<p itemprop="url">http://www.baidu.com</p>
+</div>
+WAI-ARIA（盲人可读）
+<p role=""></ps>

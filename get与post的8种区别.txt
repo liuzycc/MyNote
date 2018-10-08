@@ -1,0 +1,13 @@
+http协议中,get和post区别：
+1)get用于获取数据，post用于提交数据
+2)get传输的数据量较小，大小不能超过2kb,post传输数据量较大，一般默认为不受限制；
+3)get在浏览器和书签内有缓存，post在浏览器和书签内没有缓存
+4)get在浏览器回退时是无害的，而post会再次提交；
+5)get请求只能进行url编码，post支持多种编码方式；
+6)get安全性较低，post安全性相对较高
+7)对参数的数据类型，get只接受ASCII字符，而post没有限制
+8)get参数通过url传递，post放在request body中；
+
+
+
+

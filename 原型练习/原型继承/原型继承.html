@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    // function Person(a){
+    //   this.arr = {
+    //     yy:a,
+    //   };
+    // }  
+    // Person.prototype.say = 1;
+    // function Student(name){
+    //   this.name = name;
+    // }
+    // Student.prototype = new Person(this.name);
+    // var stu1 = new Student('lzy');
+    // console.log(stu1.say);
+    // console.log(stu1);
+    // var stu2 = new Student('xxx');
+    // console.log(stu2);
+
+    // function Person(id){
+    //   this.id = id;
+    // }
+    // function Student(id,name){
+    //   var cc = Person.bind(this);
+    //   cc(id);
+    //   this.name = name;
+    // }
+    // var stu = new Student('1','xx');
+    // console.log(stu);
+
+
+    function Person(){
+      this.name = 'kk';
+    }
+    function Student(cc){
+      this.cc = cc;
+    }
+    // var stu1 = new Student('hh1');
+    // console.log(stu1);
+    Student.prototype = {};
+    // Student.prototype.constructor = Student;
+
+    var stu = new Student('hh');
+    console.log(stu);
+
+  </script>
+</body>
+</html>
