@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>better-scroll</title>
+    <style>
+        .wrap{width:200px;height:200px;overflow:hidden;border:1px solid #0a8ddf;}
+        .wrap .content{width:100px;height:auto;}
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="content">
+        我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll我是better-scroll
+    </div>
+</div>
+<script src="https://unpkg.com/better-scroll/dist/bscroll.min.js"></script>
+<script>
+    var oScroll = new BScroll(".wrap", {
+        probeType: 2,
+        //下拉刷新：可以配置顶部下拉的距离（threshold） 来决定刷新时机以及回弹停留的距离（stop）
+        //这个配置用于做上拉加载功能，默认为 false。当设置为 true 或者是一个 Object 的时候，可以开启上拉加载
+        pullUpLoad: {
+            threshold: 10
+        },
+        mouseWheel: {    // pc端同样能滑动
+            speed: 20,
+            invert: false
+        },
+        useTransition:false  // 防止iphone微信滑动卡顿
+    });
+    oScroll.on("pullingUp",function(){
+        //alert('已到最底部');
+        console.log('加载ajax数据');
+        oScroll.finishPullUp();//可以多次执行上拉刷新
+    });
+    oScroll.refresh();
+</script>
+</body>
+</html>
+
+作者：我是你军哥
+链接：https://www.jianshu.com/p/6bd3f3085a1a
+來源：简书
+简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。

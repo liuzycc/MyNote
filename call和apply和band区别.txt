@@ -1,50 +1,50 @@
-1. ËµËµÄã¶Ôthis¹Ø¼ü×ÖµÄÀí½â£¿
-this ÊÇÒ»¸ö¹Ø¼ü×Ö£¬Ëü´ú±íº¯ÊýÔËÐÐÊ±£¬×Ô¶¯Éú³ÉµÄÒ»¸öÄÚ²¿¶ÔÏó£¬Ö»ÄÜÔÚº¯ÊýÄÚ ²¿Ê¹ÓÃ¡£
-1.×÷Îª´¿´âµÄº¯Êýµ÷ÓÃ this Ö¸ÏòÈ«¾Ö¶ÔÏó
-2.×÷Îª¶ÔÏóµÄ·½·¨µ÷ÓÃ this Ö¸Ïòµ÷ÓÃ¶ÔÏó
-3.×÷Îª¹¹Ôìº¯Êý±»µ÷ÓÃ this Ö¸ÏòÐÂµÄ¶ÔÏó£¨new»á¸Ä±ä this µÄÖ¸Ïò£©
-4.apply µ÷ÓÃ this Ö¸Ïò apply·½·¨µÄµÚÒ»¸ö²ÎÊý
+1. è¯´è¯´ä½ å¯¹thiså…³é”®å­—çš„ç†è§£ï¼Ÿ
+this æ˜¯ä¸€ä¸ªå…³é”®å­—ï¼Œå®ƒä»£è¡¨å‡½æ•°è¿è¡Œæ—¶ï¼Œè‡ªåŠ¨ç”Ÿæˆçš„ä¸€ä¸ªå†…éƒ¨å¯¹è±¡ï¼Œåªèƒ½åœ¨å‡½æ•°å†… éƒ¨ä½¿ç”¨ã€‚
+1.ä½œä¸ºçº¯ç²¹çš„å‡½æ•°è°ƒç”¨ this æŒ‡å‘å…¨å±€å¯¹è±¡
+2.ä½œä¸ºå¯¹è±¡çš„æ–¹æ³•è°ƒç”¨ this æŒ‡å‘è°ƒç”¨å¯¹è±¡
+3.ä½œä¸ºæž„é€ å‡½æ•°è¢«è°ƒç”¨ this æŒ‡å‘æ–°çš„å¯¹è±¡ï¼ˆnewä¼šæ”¹å˜ this çš„æŒ‡å‘ï¼‰
+4.apply è°ƒç”¨ this æŒ‡å‘ applyæ–¹æ³•çš„ç¬¬ä¸€ä¸ªå‚æ•°
 
-¸Ä±äº¯ÊýÄÚthisÖ¸Ïò
+æ”¹å˜å‡½æ•°å†…thisæŒ‡å‘
 
- callºÍapplyµÄÇø±ð£¿
-ËüÃÇµÄ¹²Í¬Ö®´¦£º¶¼¡°¿ÉÒÔÓÃÀ´´úÌæÁíÒ»¸ö¶ÔÏóµ÷ÓÃÒ»¸ö·½·¨£¬½«Ò»¸öº¯ÊýµÄ¶ÔÏóÉÏ 
-ÏÂÎÄ´Ó³õÊ¼µÄÉÏÏÂÎÄ¸Ä±äÎªÓÉ thisObj Ö¸¶¨µÄÐÂ¶ÔÏó¡£¡±
-ËüÃÇµÄ²»Í¬Ö®´¦£º
-Apply£º×î¶àÖ»ÄÜÓÐÁ½¸ö²ÎÊý¡ª¡ªÐÂthis ¶ÔÏóºÍÒ»¸öÊý×é argArray¡£Èç¹û¸ø¸Ã·½·¨´«µÝ¶à ¸ö²ÎÊý£¬
-Ôò°Ñ²ÎÊý¶¼Ð´½øÕâ¸öÊý×éÀïÃæ£¬µ±È»£¬¼´Ê¹Ö»ÓÐÒ»¸ö²ÎÊý£¬Ò²ÒªÐ´½øÊý×éÀïÃæ¡£
-Èç ¹û argArray ²»ÊÇÒ»¸öÓÐÐ§µÄÊý×é»òÕß²»ÊÇ arguments ¶ÔÏó£¬ÄÇÃ´½«µ¼ÖÂÒ»¸ö TypeError¡£
-Èç¹ûÃ»ÓÐÌá¹© argArray ºÍ thisObj ÈÎºÎÒ»¸ö²ÎÊý£¬ÄÇÃ´ Global ¶ÔÏó½«±» ÓÃ×÷ thisObj£¬ 
-²¢ÇÒÎÞ·¨±»´«µÝÈÎºÎ²ÎÊý
-Call£ºÔòÊÇÖ±½ÓµÄ²ÎÊýÁÐ±í£¬Ö÷ÒªÓÃÔÚjs ¶ÔÏó¸÷·½·¨»¥Ïàµ÷ÓÃµÄÊ±ºò£¬Ê¹µ±Ç° this ÊµÀýÖ¸ Õë±£³ÖÒ»ÖÂ£¬
-»òÔÚÌØÊâÇé¿öÏÂÐèÒª¸Ä±äthisÖ¸Õë¡£Èç¹ûÃ»ÓÐÌá¹© thisObj ²ÎÊý£¬ÄÇÃ´ Global ¶ÔÏó±»ÓÃ×÷ thisObj¡£
-
-
-call Óï·¨£º
-º¯ÊýÃû.call(thisArg[,arg1[,arg2[,...]]]);
-²ÎÊý£º
-thisArg,ÔÚº¯ÊýÔËÐÐÊ±Ö¸¶¨µÄthisÖµ¡£Èô´«null»òundefined£¬Ôòº¯ÊýÄÚ²¿thisÖ¸Ïòwindow¡£
-arg1, arg2, ...Ö¸¶¨µÄ²ÎÊýÁÐ±í
+ callå’Œapplyçš„åŒºåˆ«ï¼Ÿ
+å®ƒä»¬çš„å…±åŒä¹‹å¤„ï¼šéƒ½â€œå¯ä»¥ç”¨æ¥ä»£æ›¿å¦ä¸€ä¸ªå¯¹è±¡è°ƒç”¨ä¸€ä¸ªæ–¹æ³•ï¼Œå°†ä¸€ä¸ªå‡½æ•°çš„å¯¹è±¡ä¸Š 
+ä¸‹æ–‡ä»Žåˆå§‹çš„ä¸Šä¸‹æ–‡æ”¹å˜ä¸ºç”± thisObj æŒ‡å®šçš„æ–°å¯¹è±¡ã€‚â€
+å®ƒä»¬çš„ä¸åŒä¹‹å¤„ï¼š
+Applyï¼šæœ€å¤šåªèƒ½æœ‰ä¸¤ä¸ªå‚æ•°â€”â€”æ–°this å¯¹è±¡å’Œä¸€ä¸ªæ•°ç»„ argArrayã€‚å¦‚æžœç»™è¯¥æ–¹æ³•ä¼ é€’å¤š ä¸ªå‚æ•°ï¼Œ
+åˆ™æŠŠå‚æ•°éƒ½å†™è¿›è¿™ä¸ªæ•°ç»„é‡Œé¢ï¼Œå½“ç„¶ï¼Œå³ä½¿åªæœ‰ä¸€ä¸ªå‚æ•°ï¼Œä¹Ÿè¦å†™è¿›æ•°ç»„é‡Œé¢ã€‚
+å¦‚ æžœ argArray ä¸æ˜¯ä¸€ä¸ªæœ‰æ•ˆçš„æ•°ç»„æˆ–è€…ä¸æ˜¯ arguments å¯¹è±¡ï¼Œé‚£ä¹ˆå°†å¯¼è‡´ä¸€ä¸ª TypeErrorã€‚
+å¦‚æžœæ²¡æœ‰æä¾› argArray å’Œ thisObj ä»»ä½•ä¸€ä¸ªå‚æ•°ï¼Œé‚£ä¹ˆ Global å¯¹è±¡å°†è¢« ç”¨ä½œ thisObjï¼Œ 
+å¹¶ä¸”æ— æ³•è¢«ä¼ é€’ä»»ä½•å‚æ•°
+Callï¼šåˆ™æ˜¯ç›´æŽ¥çš„å‚æ•°åˆ—è¡¨ï¼Œä¸»è¦ç”¨åœ¨js å¯¹è±¡å„æ–¹æ³•äº’ç›¸è°ƒç”¨çš„æ—¶å€™ï¼Œä½¿å½“å‰ this å®žä¾‹æŒ‡ é’ˆä¿æŒä¸€è‡´ï¼Œ
+æˆ–åœ¨ç‰¹æ®Šæƒ…å†µä¸‹éœ€è¦æ”¹å˜thisæŒ‡é’ˆã€‚å¦‚æžœæ²¡æœ‰æä¾› thisObj å‚æ•°ï¼Œé‚£ä¹ˆ Global å¯¹è±¡è¢«ç”¨ä½œ thisObjã€‚
 
 
-
-apply Óï·¨£º
-º¯ÊýÃû.apply(thisArg,[argsArray])
-thisArg,ÔÚ º¯ÊýÔËÐÐÊ±Ö¸¶¨µÄ this Öµ¡£Èô´«null»òundefined£¬Ôòº¯ÊýÄÚ²¿thisÖ¸Ïòwindow
-argsArray,ÊÇÒ»¸öÊý×é£¬Êý×éÖÐ´æ·Åº¯Êýµ÷ÓÃÊ±ÐèÒª´«ÈëµÄÊµ²Î
+call è¯­æ³•ï¼š
+å‡½æ•°å.call(thisArg[,arg1[,arg2[,...]]]);
+å‚æ•°ï¼š
+thisArg,åœ¨å‡½æ•°è¿è¡Œæ—¶æŒ‡å®šçš„thiså€¼ã€‚è‹¥ä¼ nullæˆ–undefinedï¼Œåˆ™å‡½æ•°å†…éƒ¨thisæŒ‡å‘windowã€‚
+arg1, arg2, ...æŒ‡å®šçš„å‚æ•°åˆ—è¡¨
 
 
 
-bind Óï·¨£º
-var ±äÁ¿ = º¯ÊýÃû.bind(thisArg,[,arg1[,arg2[,...]]]);
-thisArg£¬ÔÚ º¯ÊýÔËÐÐÊ±Ö¸¶¨µÄ this Öµ¡£Èô´«null»òundefined£¬Ôòº¯ÊýÄÚ²¿thisÖ¸Ïòwindow
-arg1, arg2, ...Ö¸¶¨µÄ²ÎÊýÁÐ±í
-ºÍcallÊ¹ÓÃ·½Ê½Ò»Ñù£¬²»Ò»ÑùµÄÊ±£¬Ê¹ÓÃbindÊ±£¬½èÓÃµÄº¯Êý²»»á±»Á¢¼´Ö´ÐÐ£¬¶øÊÇ·µ»ØÒ»¸öÐÂµÄº¯Êý£¬ÈôÒªÖ´ÐÐ£¬ÐèÒª×Ô¼ºµ÷ÓÃ
+apply è¯­æ³•ï¼š 
+å‡½æ•°å.apply(thisArg,[argsArray])
+thisArg,åœ¨ å‡½æ•°è¿è¡Œæ—¶æŒ‡å®šçš„ this å€¼ã€‚è‹¥ä¼ nullæˆ–undefinedï¼Œåˆ™å‡½æ•°å†…éƒ¨thisæŒ‡å‘window
+argsArray,æ˜¯ä¸€ä¸ªæ•°ç»„ï¼Œæ•°ç»„ä¸­å­˜æ”¾å‡½æ•°è°ƒç”¨æ—¶éœ€è¦ä¼ å…¥çš„å®žå‚
+
+
+
+bind è¯­æ³•ï¼š
+var å˜é‡ = å‡½æ•°å.bind(thisArg,[,arg1[,arg2[,...]]]);
+thisArgï¼Œåœ¨ å‡½æ•°è¿è¡Œæ—¶æŒ‡å®šçš„ this å€¼ã€‚è‹¥ä¼ nullæˆ–undefinedï¼Œåˆ™å‡½æ•°å†…éƒ¨thisæŒ‡å‘window
+arg1, arg2, ...æŒ‡å®šçš„å‚æ•°åˆ—è¡¨
+å’Œcallä½¿ç”¨æ–¹å¼ä¸€æ ·ï¼Œä¸ä¸€æ ·çš„æ—¶ï¼Œä½¿ç”¨bindæ—¶ï¼Œå€Ÿç”¨çš„å‡½æ•°ä¸ä¼šè¢«ç«‹å³æ‰§è¡Œï¼Œè€Œæ˜¯è¿”å›žä¸€ä¸ªæ–°çš„å‡½æ•°ï¼Œè‹¥è¦æ‰§è¡Œï¼Œéœ€è¦è‡ªå·±è°ƒç”¨
 
 
 
 function fn(a,b,c,d){
-¡¡¡¡console.log(a,b,c,d);
+ã€€ã€€console.log(a,b,c,d);
 }
 //call
 fn.call(null,1,2,3);
@@ -54,13 +54,13 @@ fn.apply(null,[1,2,3]);
 var f = fn.bind(null,1,2,3);
 f(4);
 
-½á¹ûÈçÏÂ£º
+ç»“æžœå¦‚ä¸‹ï¼š
 1 2 3 undefined
 1 2 3 undefined
 1 2 3 4
 
-call¾ÍÊÇ°¤¸ö´«Öµ£¬apply´«Ò»¸öÊý×é£¬bindÒ²ÊÇ°¤¸ö´«Öµ£¬µ«ºÍcallºÍapply»¹ÓÐÒ»Ð©²»Í¬£¬
-Ê¹ÓÃcallºÍapply»áÖ±½ÓÖ´ÐÐÕâ¸öº¯Êý£¬¶øbind²¢²»Ö±½ÓÖ´ÐÐ£¬¶øÊÇ½«°ó¶¨ºÃµÄthisÖØÐÂ·µ»ØÒ»¸öÐÂº¯Êý
-×¢ÒâÈç¹ûcallºÍapplyµÄµÚÒ»¸ö²ÎÊýÐ´µÄÊÇnull£¬ÄÇÃ´thisÖ¸ÏòµÄÊÇwindow¶ÔÏó
-callºÍapply¶¼ÊÇ¸Ä±äÉÏÏÂÎÄÖÐµÄthis²¢Á¢¼´Ö´ÐÐÕâ¸öº¯Êý£¬bind·½·¨¿ÉÒÔÈÃ¶ÔÓ¦µÄº¯ÊýÏëÊ²Ã´Ê±ºòµ÷¾ÍÊ²Ã´Ê±ºòµ÷ÓÃ£¬
-²¢ÇÒ¿ÉÒÔ½«²ÎÊýÔÚÖ´ÐÐµÄÊ±ºòÌí¼Ó£¬ÕâÊÇËüÃÇµÄÇø±ð
+callå°±æ˜¯æŒ¨ä¸ªä¼ å€¼ï¼Œapplyä¼ ä¸€ä¸ªæ•°ç»„ï¼Œbindä¹Ÿæ˜¯æŒ¨ä¸ªä¼ å€¼ï¼Œä½†å’Œcallå’Œapplyè¿˜æœ‰ä¸€äº›ä¸åŒï¼Œ
+ä½¿ç”¨callå’Œapplyä¼šç›´æŽ¥æ‰§è¡Œè¿™ä¸ªå‡½æ•°ï¼Œè€Œbindå¹¶ä¸ç›´æŽ¥æ‰§è¡Œï¼Œè€Œæ˜¯å°†ç»‘å®šå¥½çš„thisé‡æ–°è¿”å›žä¸€ä¸ªæ–°å‡½æ•°
+æ³¨æ„å¦‚æžœcallå’Œapplyçš„ç¬¬ä¸€ä¸ªå‚æ•°å†™çš„æ˜¯nullï¼Œé‚£ä¹ˆthisæŒ‡å‘çš„æ˜¯windowå¯¹è±¡
+callå’Œapplyéƒ½æ˜¯æ”¹å˜ä¸Šä¸‹æ–‡ä¸­çš„thiså¹¶ç«‹å³æ‰§è¡Œè¿™ä¸ªå‡½æ•°ï¼Œbindæ–¹æ³•å¯ä»¥è®©å¯¹åº”çš„å‡½æ•°æƒ³ä»€ä¹ˆæ—¶å€™è°ƒå°±ä»€ä¹ˆæ—¶å€™è°ƒç”¨ï¼Œ
+å¹¶ä¸”å¯ä»¥å°†å‚æ•°åœ¨æ‰§è¡Œçš„æ—¶å€™æ·»åŠ ï¼Œè¿™æ˜¯å®ƒä»¬çš„åŒºåˆ«

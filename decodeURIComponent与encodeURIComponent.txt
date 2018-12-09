@@ -1,2 +1,2 @@
-decodeURIComponent('str')  ACSOLLÂë×ªÖĞÎÄ
-encodeURIComponent('str')  ÖĞÎÄ×ªACSOLLÂë
+decodeURIComponent('str')  ACSOLLç è½¬ä¸­æ–‡
+encodeURIComponent('str')  ä¸­æ–‡è½¬ACSOLLç 
