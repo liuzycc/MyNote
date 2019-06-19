@@ -1286,7 +1286,11 @@ window.addEventListener('offline', function () {
   this.$axios.get('http://xxxxxx.js',{})
       .then((response)=>{console.log(response)})
       .catch((err)=>{console.log(err)})
+  
+  ##2019/06/19
+  // 我又来了重新开始
   ------ ZiRoom end -------
+
 
 
 
