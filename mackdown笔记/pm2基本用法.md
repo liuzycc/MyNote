@@ -3,6 +3,7 @@
 npm install -g pm2
 ```
 ---
+
 #用法
 ```text
 $ npm install pm2 -g     # 命令行安装 pm2 
