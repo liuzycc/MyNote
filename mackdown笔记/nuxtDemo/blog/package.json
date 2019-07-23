@@ -1,0 +1,28 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "my blog",
+  "author": "liuziyi",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nuxt",
+    "build": "nuxt build",
+    "start": "cross-env NODE_ENV=production node server/index.js",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.5.4",
+    "axios": "^0.19.0",
+    "cross-env": "^5.2.0",
+    "element-ui": "^2.10.1",
+    "koa": "^2.6.2",
+    "nuxt": "^2.4.0",
+    "vue-notifications": "^1.0.0"
+  },
+  "devDependencies": {
+    "fsevents": "^2.0.7",
+    "node-sass": "^4.12.0",
+    "nodemon": "^1.18.9",
+    "sass-loader": "^7.1.0"
+  }
+}

@@ -1,0 +1,30 @@
+.el-tabs__item.is-active,
+.el-tabs__item:hover {
+  color: #ebb671;
+}
+.el-tabs__active-bar {
+  background-color: #ebb671;
+}
+.el-tabs__nav-scroll {
+  padding: 0 30px;
+}
+.el-tabs__header.is-top {
+  background-color: #fff;
+}
+/* dropdown */
+.el-dropdown-menu {
+  margin-top: 0 !important;
+  background: rgba(0, 0, 0, 0.4);
+}
+.el-dropdown-menu__item--divided {
+  border-top: 1px solid #fff;
+  color: #fff;
+}
+.el-dropdown-menu__item--divided:before {
+  background: rgba(0, 0, 0, 0) !important;
+}
+.el-dropdown-menu__item:focus,
+.el-dropdown-menu__item:not(.is-disabled):hover {
+  background-color: rgba(0,0,0,0,1)!important;
+  color: #000!important;
+}
