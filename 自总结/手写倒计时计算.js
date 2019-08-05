@@ -30,5 +30,4 @@ function timeKill(){
     spanlist[6].innerText = s1;
     spanlist[7].innerText = s2;
   }
- 
 }
