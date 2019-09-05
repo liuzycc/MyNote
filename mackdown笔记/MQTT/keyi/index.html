@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" />
+    <a class="send" href="javascript:;">发送</a>
+    <a class="close" href="javascript:;">关闭</a>
+    <p id="message"></p>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/sockjs.js"></script>
+    <script src="./js/stomp.js"></script>
+    <script>
+      $(function() {
+        if (!"WebSocket" in window) {
+          alert("当前浏览器不支持拨打电话");
+          return false;
+        }
+
+        var ws = new WebSocket("ws://10.16.9.34:15674/ws");
+        // 获得Stomp client对象
+        var client = Stomp.over(ws);
+        // SockJS does not support heart-beat: disable heart-beats
+        client.heartbeat.outgoing = 0;
+        client.heartbeat.incoming = 0;
+        // 定义连接成功回调函数
+        var on_connect = function(x) {
+          //data.body是接收到的数据
+          client.subscribe("/exchange/d.EX_zmc_holly_exchange", function(data) {
+            var msg = data.body;
+            $("#message").append("收到数据：" + msg);
+          });
+          $(".send").click(function() {
+            client.send(
+              "/exchange/d.EX_zmc_holly_exchange",
+              { a: "haha" },
+              $("input").val()
+            );
+          });
+        };
+        $(".close").click(function() {
+          client.disconnect();
+        });
+        // 定义错误时回调函数
+        var on_error = function() {
+          console.log("error");
+        };
+        // 连接RabbitMQ
+        client.connect(
+          "sms_rabbit_write",
+          "sms_rabbit_write",
+          on_connect,
+          on_error,
+          "/"
+        );
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>canvas水印</title>
+    <style>
+      #repeat-watermark {
+        position: fixed;
+        z-index: -1;
+        top: 0;
+        background: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="watermark" width="160px" height="100px"></canvas>
+    <canvas id="repeat-watermark"></canvas>
+    <script src="./jquery.js"></script>
+    <script>
+      //   var cw = $("#watermark")[0];
+      //   var ctx = cw.getContext("2d"); //返回一个用于在画布上绘图的环境
+      //   ctx.clearRect(0, 0, 160, 100); //绘制之前画布清除
+      //   ctx.font = "20px 黑体";
+      //   ctx.rotate((-20 * Math.PI) / 180);
+      //   ctx.fillStyle = "rgba(100,100,100,0.1)";
+      //   ctx.fillText("465dd92381", -20, 80);
+      //   ctx.rotate("20*Math.PI/180"); //坐标系还原
+
+      //   var crw = $("#repeat-watermark")[0];
+      //   crw.width = $(document).width();
+      //   crw.height = $(document).height();
+      //   ctxr = crw.getContext("2d");
+      //   ctxr.clearRect(0, 0, crw.width, crw.height); //清除整个画布
+      //   var pat = ctxr.createPattern(cw, "repeat"); //在指定的方向上重复指定的元素
+      //   ctxr.fillStyle = pat;
+      //   ctxr.fillRect(0, 0, crw.width, crw.height);
+
+      var Watermark = function(container, options) {
+        var self = this;
+        self.opt = {
+          docWidth: $(document).width(),
+          docHeight: $(document).height(),
+          fontStyle: "20px 黑体", //水印字体设置
+          rotateAngle: (-20 * Math.PI) / 180, //水印字体倾斜角度设置
+          fontColor: "rgba(100, 100, 100, 0.1)", //水印字体颜色设置
+          firstLinePositionX: -20, //canvas第一行文字起始X坐标
+          firstLinePositionY: 80, //Y
+          SecondLinePositionX: 0, //canvas第二行文字起始X坐标
+          SecondLinePositionY: 70 //Y
+        };
+        $.extend(self.opt, options);
+        self.draw(self.opt.docWidth, self.opt.docHeight);
+        self.events();
+      };
+
+      Watermark.prototype = {
+        draw: function(docWidth, docHeight) {
+          var self = this;
+          var cw = $("#watermark")[0];
+          var crw = $("#repeat-watermark")[0];
+
+          crw.width = docWidth;
+          crw.height = docHeight;
+
+          var ctx = cw.getContext("2d");
+          //清除小画布
+          ctx.clearRect(0, 0, 160, 100);
+          ctx.font = self.opt.fontStyle;
+          //文字倾斜角度
+          ctx.rotate(self.opt.rotateAngle);
+          ctx.fillStyle = self.opt.fontColor;
+          //第一行文字
+          ctx.fillText(
+            self.opt.watermark,
+            self.opt.firstLinePositionX,
+            self.opt.firstLinePositionY
+          );
+          //坐标系还原
+          ctx.rotate(-self.opt.rotateAngle);
+          var ctxr = crw.getContext("2d");
+          //清除整个画布
+          ctxr.clearRect(0, 0, crw.width, crw.height);
+          //平铺--重复小块的canvas
+          var pat = ctxr.createPattern(cw, "repeat");
+          ctxr.fillStyle = pat;
+          ctxr.fillRect(0, 0, crw.width, crw.height);
+        },
+        events: function() {
+          var self = this;
+          $(window).resize(function() {
+            var w = $(document).width();
+            var h = $(document).height();
+            self.draw(w, h);
+          });
+        }
+      };
+      
+      
+      new Watermark($('body')[0])
+      //   module.exports = Watermark;
+    </script>
+  </body>
+</html>
